@@ -1,17 +1,15 @@
 var grades = [];
         var update_scores = function () {
            var val = get_item_list(grades);
-           //Add the appropriate id names to read scores, student_name
            document.getElementById("scores").value = val;
            document.getElementById("student_name").value = "";
-           document.getElementById("scores").value = "";   
+           document.getElementById("score").value = "";
            document.getElementById("student_name").focus();
         }    
-        //Function to add last, first, score to studentGrade
         var student_grade_add_click = function() {
         var last = document.getElementById("student_name").value;
-                var score = parseFloat(document.getElementById('score').value);
-                grades.push([last, score]);  
+               var score = parseFloat(document.getElementById('score').value);
+                grades.push ([last, score]);  
                 update_scores();
                 document.getElementById("average_score").value = getAverageScore(grades);
         }
@@ -30,8 +28,7 @@ var grades = [];
            }
            return list;
         }
-        
-        //Average function
+
         function getAverageScore(grades){ 
         
         var numberOfStudents = grades.length; 
@@ -54,7 +51,6 @@ var grades = [];
         
         var sort_click = function () 
         {
-        //Add the sort() function to sort students by thier names
         grades.sort();
         update_scores();
         }
@@ -64,4 +60,3 @@ var grades = [];
                 document.getElementById("sort_button").onclick = sort_click;      
                 document.getElementById("student_name").focus();
         }
-        
